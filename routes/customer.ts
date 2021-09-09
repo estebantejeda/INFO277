@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import {setCustomer} from '../controllers/customer';
+import * as customer from '../controllers/customer';
 
 const router = Router()
 
-router.post('/customer', setCustomer);
+router.post('/customer', customer.setCustomer);
 
 export default router;

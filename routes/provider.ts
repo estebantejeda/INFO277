@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import {setProvider} from "../controllers/provider";
+import * as provider from "../controllers/provider";
 
 const router = Router()
 
-router.post('/provider', setProvider);
+router.post('/provider', provider.setProvider);
 
 export default router;
