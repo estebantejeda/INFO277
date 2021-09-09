@@ -13,7 +13,7 @@ class Config {
         this._DB_USER = process.env.DB_USER || "root";
         this._DB_PASS = process.env.DB_PASS || "toor";
         this._DB_NAME = process.env.DB_NAME || "test";
-        this._HOST = process.env.DB_NAME || "127.0.0.1";
+        this._HOST = process.env.DB_HOST || "127.0.0.1";
         this._PORT = parseInt(process.env.PORT as string)|| 3000;
     }
 
@@ -32,7 +32,6 @@ class Config {
     get PORT(){
         return this._PORT;
     }
-
 }
 
 export default Config;
