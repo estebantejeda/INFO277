@@ -16,7 +16,8 @@ const Product = database.define('product', {
     },
     stock: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {min: 0}
     },
     price: {
         type: DataTypes.INTEGER,

@@ -12,7 +12,6 @@ const Customer = database.define('customer', {
     },
     address: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     city: {
         type: DataTypes.STRING,
