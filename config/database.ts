@@ -1,7 +1,5 @@
 import {Sequelize} from "sequelize";
-import Config from './config';
-
-let config = new Config();
+import * as config from './config';
 
 const database = new Sequelize(
     config.DB_NAME,

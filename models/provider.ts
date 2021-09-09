@@ -22,6 +22,9 @@ const Provider = database.define('provider', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    city: {
+        type: DataTypes.STRING
+    },
     email: {
         type: DataTypes.STRING,
         validate: {isEmail: true}
