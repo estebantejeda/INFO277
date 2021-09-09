@@ -15,11 +15,11 @@ const Customer = database.define('customer', {
         allowNull: false
     },
     city: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         validate: {isEmail: true}
     }
 });
