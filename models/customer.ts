@@ -19,7 +19,8 @@ const Customer = database.define('customer', {
     },
     email: {
         type: DataTypes.STRING,
-        validate: {isEmail: true}
+        validate: {isEmail: true},
+        unique: true
     }
 });
 

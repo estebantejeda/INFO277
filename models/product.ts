@@ -12,6 +12,7 @@ const Product = database.define('product', {
     },
     date: {
         type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
         allowNull: false
     },
     stock: {

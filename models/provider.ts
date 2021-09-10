@@ -12,11 +12,13 @@ const Provider = database.define('provider', {
     },
     companyName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'company_name'
     },
     lineBusiness: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'line_business'
     },
     address: {
         type: DataTypes.STRING,
@@ -27,6 +29,7 @@ const Provider = database.define('provider', {
     },
     email: {
         type: DataTypes.STRING,
+        unique: true,
         validate: {isEmail: true}
     }
 });

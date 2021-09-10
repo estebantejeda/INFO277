@@ -16,17 +16,22 @@ const SaleLedger = database.define('sale_ledger', {
         validate: {len: [4,4]}
     },
     docNumber: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'doc_number'
     },
     netValue: {
-        type: DataTypes.DOUBLE
+        type: DataTypes.DOUBLE,
+        allowNull: false,
+        field: 'net_value'
     },
     tax: {
-      type: DataTypes.DOUBLE
+        type: DataTypes.DOUBLE,
+        allowNull: false
     },
     total: {
-        type: DataTypes.DOUBLE
+        type: DataTypes.DOUBLE,
+        allowNull: false
     }
 });
 
