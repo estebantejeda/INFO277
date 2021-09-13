@@ -3,6 +3,6 @@ import * as kardex from '../controllers/kardex';
 
 const router = Router();
 
-router.post('kardex', kardex.setKardex);
+router.get('/kardex', kardex.getKardex);
 
 export default router;
