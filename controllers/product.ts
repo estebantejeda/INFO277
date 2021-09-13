@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import Product from "../models/product";
 
-export const setProduct = (req: Request, res: Response) => {
+export const postProduct = (req: Request, res: Response) => {
     Product.create({
         description: req.body.description,
         cost: req.body.cost,
