@@ -9,20 +9,24 @@ export const postCustomer = (req: Request, res: Response) => {
         city: req.body.city,
         email: req.body.email
     })
-        .then(result => res.json({result, ok: true}))
-        .catch(err => res.json({err, ok: false}));
-}
-
-export const getCustomer = (req: Request, res: Response) => {
-    Customer.findByPk(req.params.id)
         .then(customer => res.json(customer))
-        .catch(err => res.json(err));
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+        }));
 }
 
-export const getAllCustomer = (_req: Request, res: Response) => {
-    Customer.findAll()
-        .then(customers => res.json(customers))
-        .catch(err => res.json(err))
+export const getCustomer = async (req: Request, res: Response) => {
+    const customer = await Customer.findByPk(req.params.id);
+    if(!customer) return res.json({error: "Id not found"});
+    return res.json(customer);
+}
+
+export const getAllCustomer = async (_req: Request, res: Response) => {
+    const customers = await Customer.findAll();
+    if(Object.entries(customers).length === 0) return res.json({error: "Customers not found"});
+    return res.json(customers);
 }
 
 export const putCustomer = (req: Request, res: Response) => {
@@ -32,9 +36,11 @@ export const putCustomer = (req: Request, res: Response) => {
         address: req.body.name,
         city: req.body.city,
         email: req.body.city
-    }, {
-        where: {id: req.params.id}
-    })
-        .then(customer => res.json(customer))
-        .catch(err => res.json(err));
+    }, {where: {id: req.params.id}})
+        .then(() => res.json({msge: "Successful update"}))
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+    }));
 }

@@ -9,20 +9,24 @@ export const postProduct = (req: Request, res: Response) => {
         stock: req.body.stock,
         price: req.body.price
     })
-        .then(result => res.json({result, ok: true}))
-        .catch(err => res.json({err, ok: false}));
+        .then(product => res.json(product))
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+        }));
 }
 
-export const getProduct = (req: Request, res: Response) => {
-    Product.findByPk(req.params.id)
-        .then(post => res.json(post))
-        .catch(err => res.json(err));
+export const getProduct = async (req: Request, res: Response) => {
+    const product = await Product.findByPk(req.params.id);
+    if(!product) return res.json({error: "Id not found"});
+    return res.json(product);
 }
 
-export const getAllProduct = (_req: Request, res: Response) => {
-    Product.findAll()
-        .then(post => res.json(post))
-        .catch(err => res.json(err));
+export const getAllProduct = async (_req: Request, res: Response) => {
+    const products = await Product.findAll();
+    if(Object.entries(products).length === 0) return res.json({error: "Products not found"});
+    return res.json(products);
 }
 
 export const putProduct = (req: Request, res: Response) => {
@@ -31,9 +35,11 @@ export const putProduct = (req: Request, res: Response) => {
         cost: req.body.cost,
         stock: req.body.stock,
         price: req.body.price
-    },{
-        where: {id: req.params.id}
-    })
+    },{where: {id: req.params.id}})
         .then(post => res.json(post))
-        .catch(err => res.json(err));
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+        }));
 }

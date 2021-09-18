@@ -1,8 +1,8 @@
 import {Request, Response} from "express";
 import SaleLedger from "../models/saleLedger";
 
-export const getSaleLedger = (_req: Request, res: Response) => {
-    SaleLedger.findAll()
-        .then(ans => res.json(ans))
-        .catch(err => res.json(err));
+export const getSaleLedger = async (_req: Request, res: Response) => {
+    const saleLedgers = await SaleLedger.findAll();
+    if(Object.entries(saleLedgers).length === 0) return res.json({error: "Sale Ledgers not found"});
+    return res.json(saleLedgers);
 }

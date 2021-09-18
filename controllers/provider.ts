@@ -10,20 +10,24 @@ export const postProvider = (req: Request, res: Response) => {
         address: req.body.address,
         email: req.body.email
     })
-        .then(result => res.json({result, ok: true}))
-        .catch(err => res.json({err, ok: false}));
-}
-
-export const getProvider = (req: Request, res: Response) => {
-    Provider.findByPk(req.params.id)
         .then(provider => res.json(provider))
-        .catch(err => res.json(err));
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+        }));
 }
 
-export const getAllProvider = (_req: Request, res: Response) => {
-    Provider.findAll()
-        .then(providers => res.json(providers))
-        .then(err => res.json(err))
+export const getProvider = async (req: Request, res: Response) => {
+    const provider = await Provider.findByPk(req.params.id);
+    if(!provider) return res.json({error: "Id not found"});
+    return res.json(provider);
+}
+
+export const getAllProvider = async (_req: Request, res: Response) => {
+    const providers = await Provider.findAll();
+    if(Object.entries(providers).length === 0) return res.json({err: "Providers not found"});
+    return res.json(providers);
 }
 
 export const putProvider = (req: Request, res: Response) => {
@@ -33,9 +37,11 @@ export const putProvider = (req: Request, res: Response) => {
         address: req.body.address,
         city: req.body.city,
         email: req.body.email
-    }, {
-        where: {id: req.params.id}
-    })
-        .then(provider => res.json(provider))
-        .catch(err => res.json(err));
+    }, {where: {id: req.params.id}})
+        .then(() => res.json({msge: "Successful update"}))
+        .catch(err => res.json({
+            error: err.errors[0].message,
+            type: err.errors[0].type,
+            value: err.errors[0].value
+    }));
 }
