@@ -4,7 +4,8 @@ import database from "../config/database";
 const Customer = database.define('customer', {
     rut: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     name: {
         type: DataTypes.STRING,
