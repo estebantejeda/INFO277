@@ -1,0 +1,31 @@
+<h1 class="mt-4">Ingresar Cliente</h1>
+
+<div class="container mt-4">
+  <div *ngIf="successAlert" class="alert alert-success" role="alert">Producto añadido con éxito!</div>
+  <form [formGroup]="productForm" (ngSubmit)="newCustomer()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nombre</label>
+      <input type="text" formControlName="name" class="form-control" id="inputName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputRut" class="form-label">RUT</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-6">
+      <label for="inputAddress" class="form-label">Dirección</label>
+      <input type="text" formControlName="address" class="form-control" id="inputAddress">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Ciudad</label>
+      <input type="text" formControlName="city" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-12">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" id="inputEmail">
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="productForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+
+</div>

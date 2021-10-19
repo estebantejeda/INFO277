@@ -1,0 +1,28 @@
+<h1 class="mt-4">Lista de Proveedores</h1>
+
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">RUT</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customerList">
+      <th scope="row">{{customer.id}}</th>
+      <td>{{customer.name}}</td>
+      <td>{{customer.rut}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.city}}</td>
+      <td>{{customer.email}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
