@@ -8,6 +8,7 @@ export const postProvider = (req: Request, res: Response) => {
         companyName: req.body.companyName,
         lineBusiness: req.body.lineBusiness,
         address: req.body.address,
+        city: req.body.city,
         email: req.body.email
     })
         .then(provider => res.json(provider))
