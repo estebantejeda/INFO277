@@ -1,7 +1,5 @@
 <h1 class="mt-4">Ingresar Producto</h1>
 
-
-
 <div class="container mt-4">
   <div *ngIf="successAlert" class="alert alert-success" role="alert">Producto añadido con éxito!</div>
   <form [formGroup]="productForm" (ngSubmit)="newProduct()" class="row g-3">
@@ -34,8 +32,4 @@
     </div>
   </form>
 
-</div>
-
-<div class="container mt-5">
-  <app-lista-articulos></app-lista-articulos>
 </div>

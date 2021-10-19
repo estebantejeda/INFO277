@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../../../services/product.service'
-import {Product} from "../../../models/Product";
+import {ProductService} from '../../services/product.service'
+import Product from "../../models/Product";
 
 @Component({
   selector: 'app-lista-articulos',
@@ -17,13 +17,5 @@ export class ListaArticulosComponent implements OnInit {
   ngOnInit(): void {
     this.api.getProduct().subscribe(data => this.productList = data);
   }
-
-  update(){
-    this.api.getProduct().subscribe(data => {
-      console.log(data)
-      this.productList = data;
-    });
-  }
-
 
 }
