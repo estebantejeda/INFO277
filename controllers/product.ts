@@ -3,6 +3,7 @@ import Product from "../models/product";
 
 export const postProduct = (req: Request, res: Response) => {
     Product.create({
+        id: req.body.id,
         description: req.body.description,
         cost: req.body.cost,
         date: req.body.date,
