@@ -1,15 +1,18 @@
-import Kardex from "./kardex";
 import Product from "./product";
-import SaleLedger from "./saleLedger";
+import PurchaseLedger from "./purchaseLedger";
+import Provider from "./provider";
+import Kardex from "./kardex";
 
 const init = () => {
+    Product.hasOne(PurchaseLedger, {
+        foreignKey: {allowNull: false}
+    });
+    Provider.hasOne(PurchaseLedger,{
+        foreignKey: {allowNull: false}
+    });
     Product.hasOne(Kardex, {
-        foreignKey: {allowNull: false}
-    });
-
-    SaleLedger.hasOne(Kardex, {
-        foreignKey: {allowNull: false}
-    });
+        foreignKey: {allowNull: true}
+    })
 }
 
 export default init;
