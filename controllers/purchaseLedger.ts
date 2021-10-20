@@ -1,14 +1,16 @@
 import {Request, Response} from "express";
 import Provider from "../models/provider";
 import PurchaseLedger from "../models/purchaseLedger";
+import Kardex from "../models/kardex";
+
 export const postPurchase = async (req: Request, res: Response) =>{
     if(req.body.length === 0) return res.json({
         ok: false,
         msge: "No se ingresaron compras"
-    })
+    });
     for (let purchase of req.body){
         const idProvider = await Provider.findOne({where: {rut: purchase.rut}});
-        await PurchaseLedger.create({
+        const purchaseLedger = await PurchaseLedger.create({
             docNumber: purchase.docNumber,
             date: purchase.date,
             stock: purchase.stock,
@@ -16,6 +18,10 @@ export const postPurchase = async (req: Request, res: Response) =>{
             total: purchase.total,
             providerId: idProvider?.getDataValue("id"),
             productId: purchase.id
+        });
+        await Kardex.create({
+            quantity: purchase.stock,
+            purchaseLedgerId: purchaseLedger.getDataValue("id")
         });
     }
     return res.json({
