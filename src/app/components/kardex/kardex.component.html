@@ -8,18 +8,18 @@
       <th scope="col">Fecha</th>
       <th scope="col">Num. Documento</th>
       <th scope="col">Precio</th>
-      <th scope="col">Debe</th>
       <th scope="col">Haber</th>
+      <th scope="col">Debe</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let kardex of kardexList">
-      <th scope="row">{{kardex.saleLedgerId}}</th>
-      <td>{{kardex.date | date: 'dd/MM/yyyy'}}</td>
-      <td>{{kardex.productId}}</td>
-      <td>$ {{kardex.price}}</td>
-      <td>{{kardex.quantity}}</td>
-      <td>{{kardex.assets}}</td>
+      <th scope="row">{{kardex.purchase_ledger.productId}}</th>
+      <th>{{kardex.purchase_ledger.date | date: 'dd/MM/yyyy'}}</th>
+      <th>{{kardex.purchase_ledger.docNumber}}</th>
+      <th>{{kardex.purchase_ledger.price}}</th>
+      <th>{{kardex.quantity}}</th>
+      <th>{{kardex.assets}}</th>
     </tr>
     </tbody>
   </table>

@@ -14,7 +14,10 @@ export class KardexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getKardex().subscribe(data => this.kardexList = data);
+    this.api.getKardex().subscribe(data => {
+      this.kardexList = data;
+      console.log(data);
+    });
   }
 
 }
