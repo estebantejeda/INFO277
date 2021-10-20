@@ -10,9 +10,11 @@ const init = () => {
     Provider.hasOne(PurchaseLedger,{
         foreignKey: {allowNull: false}
     });
-    Product.hasOne(Kardex, {
+
+    PurchaseLedger.hasOne(Kardex, {
         foreignKey: {allowNull: true}
     })
+    Kardex.belongsTo(PurchaseLedger);
 }
 
 export default init;
