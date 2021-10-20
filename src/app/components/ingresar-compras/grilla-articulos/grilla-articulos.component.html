@@ -10,8 +10,14 @@
     </tr>
     </thead>
     <tbody>
+    <tr *ngFor="let purchase of purchaseList">
+      <th scope="row">{{purchase.id}}</th>
+      <td>$ {{purchase.price}}</td>
+      <td>{{purchase.stock}}</td>
+      <td>$ {{purchase.price}}</td>
+      <td>$ {{purchase.total}}</td>
+    </tr>
     </tbody>
   </table>
+  <button class="btn btn-success btn-lg" (click)="sendPurchase()" type="submit">Aceptar</button>
 </div>
-
-

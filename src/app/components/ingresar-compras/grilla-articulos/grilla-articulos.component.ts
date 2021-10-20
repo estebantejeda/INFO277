@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import Purchase from "../../../models/Purchase";
+import {PurchaseService} from "../../../services/purchase.service";
 
 @Component({
   selector: 'app-grilla-articulos',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grilla-articulos.component.css']
 })
 export class GrillaArticulosComponent implements OnInit {
-
-  constructor() { }
+  @Input() purchaseList: any;
+  successAlert: boolean;
+  constructor(private api: PurchaseService) {
+    this.successAlert = false;
+  }
 
   ngOnInit(): void {
   }
 
+  sendPurchase(){
+    this.api.postPurchase(this.purchaseList).subscribe(data => {
+      this.purchaseList = [];
+      console.log(data);
+    })
+  }
+
+
 }
+

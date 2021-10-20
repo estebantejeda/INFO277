@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import Purchase from "../../models/Purchase";
 
 @Component({
   selector: 'app-ingresar-compras',
@@ -11,10 +12,12 @@ export class IngresarComprasComponent implements OnInit {
   namePlaceHolder: string;
   descriptionPlaceHolder: string;
   purchaseForm: FormGroup;
+  purchaseList: Purchase[];
   constructor(private fb: FormBuilder) {
     this.successAlert = false;
     this.namePlaceHolder = "";
     this.descriptionPlaceHolder = "";
+    this.purchaseList = [];
     this.purchaseForm = this.fb.group({
       docNum: ['', Validators.required],
       date: ['', Validators.required],
@@ -30,7 +33,19 @@ export class IngresarComprasComponent implements OnInit {
   }
 
   newPurchase(){
-    console.log(this.purchaseForm.value);
+    const purchase = new Purchase(
+      this.purchaseForm.value.docNum,
+      this.purchaseForm.value.date,
+      this.purchaseForm.value.rut,
+      this.purchaseForm.value.id,
+      this.purchaseForm.value.stock,
+      this.purchaseForm.value.price,
+      this.purchaseForm.value.total
+    );
+    this.addPurchase(purchase);
   }
 
+  addPurchase(data: Purchase) {
+    this.purchaseList.push(data);
+  }
 }
