@@ -36,8 +36,11 @@ export class ArticuloComponent implements OnInit {
     )
     this.api.postProduct(product).subscribe(data => {
       this.successAlert = true;
+      this.productForm.reset();
       setTimeout(() => this.successAlert = false, 2000);
     });
   }
+
+
 
 }

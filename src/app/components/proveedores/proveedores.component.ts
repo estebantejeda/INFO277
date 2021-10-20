@@ -39,6 +39,7 @@ export class ProveedoresComponent implements OnInit {
     )
     this.api.postProvider(provider).subscribe(data => {
       this.successAlert = true;
+      this.productForm.reset();
       setTimeout(() => this.successAlert = false, 2000);
     });
   }

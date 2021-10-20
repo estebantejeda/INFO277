@@ -35,6 +35,7 @@ export class ClienteComponent implements OnInit {
     )
     this.api.postCustomer(customer).subscribe(data => {
       this.successAlert = true;
+      this.productForm.reset();
       setTimeout(() => this.successAlert = false, 2000);
     })
   }
