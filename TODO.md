@@ -26,8 +26,8 @@
 - [x] Crear un carro
 - [x] Añadir al carro
 - [ ] Eliminar al carro
-- [ ] Añadir compras a Kardex
-- [ ] Afectar existencias en Kardex
+- [x] Añadir compras a Kardex
+- [x] Afectar existencias en Kardex
 - [ ] Encontrar producto al ingresar el id
 - [ ] Encontrar proveedores al ingresar el rut
 
@@ -43,14 +43,14 @@
 
 ### 2.2 Factura/Boleta
 
-- [ ] Ingresar ventas
-- [ ] Crear un carro
-- [ ] añadir al carro
+- [x] Ingresar ventas
+- [x] Crear un carro
+- [x] añadir al carro
 - [ ] eliminar al carro
 - [ ] añadir ventas a kardex
 - [ ] afectar existencias a kardex
 - [ ] encontrar clientes al ingresar rut
-- [ ] Elegir si es factura/boleta
+- [x] Elegir si es factura/boleta
 - [ ] Elegir forma de pago
 - [ ] Generar un libro de ventas
 
