@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Purchase from "../../../models/Purchase";
 import {PurchaseService} from "../../../services/purchase.service";
 
 @Component({
@@ -20,7 +19,6 @@ export class GrillaArticulosComponent implements OnInit {
   sendPurchase(){
     this.api.postPurchase(this.purchaseList).subscribe(data => {
       this.purchaseList = [];
-      console.log(data);
     })
   }
 

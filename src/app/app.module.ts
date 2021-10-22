@@ -16,6 +16,8 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { ListaClientesComponent } from './components/lista-clientes/lista-clientes.component';
 import { IngresarComprasComponent } from './components/ingresar-compras/ingresar-compras.component';
 import { GrillaArticulosComponent } from './components/ingresar-compras/grilla-articulos/grilla-articulos.component';
+import { IngresarVentasComponent } from './components/ingresar-ventas/ingresar-ventas.component';
+import { GrillaVentasComponent } from './components/ingresar-ventas/grilla-ventas/grilla-ventas.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { GrillaArticulosComponent } from './components/ingresar-compras/grilla-a
     ClienteComponent,
     ListaClientesComponent,
     IngresarComprasComponent,
-    GrillaArticulosComponent
+    GrillaArticulosComponent,
+    IngresarVentasComponent,
+    GrillaVentasComponent
   ],
   imports: [
     BrowserModule,

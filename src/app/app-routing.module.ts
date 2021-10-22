@@ -9,6 +9,7 @@ import {KardexComponent} from "./components/kardex/kardex.component";
 import {ClienteComponent} from "./components/cliente/cliente.component";
 import {ListaClientesComponent} from "./components/lista-clientes/lista-clientes.component";
 import {IngresarComprasComponent} from "./components/ingresar-compras/ingresar-compras.component";
+import {IngresarVentasComponent} from "./components/ingresar-ventas/ingresar-ventas.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'kardex', component: KardexComponent},
   {path: 'newCustomer', component: ClienteComponent},
   {path: 'customer', component: ListaClientesComponent},
-  {path: 'ingresarCompras', component: IngresarComprasComponent}
+  {path: 'newPurchase', component: IngresarComprasComponent},
+  {path: 'newSale', component: IngresarVentasComponent}
 ];
 
 @NgModule({
