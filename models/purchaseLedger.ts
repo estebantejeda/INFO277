@@ -14,8 +14,8 @@ const PurchaseLedger = database.define('purchase_ledger', {
     },
     stock: {
         type: DataTypes.INTEGER,
-        defaultValue: 0,
-        validate: {min: 0}
+        defaultValue: 1,
+        validate: {min: 1}
     },
     price: {
         type: DataTypes.INTEGER,
