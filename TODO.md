@@ -47,11 +47,11 @@
 - [x] Crear un carro
 - [x] añadir al carro
 - [ ] eliminar al carro
-- [ ] añadir ventas a kardex
-- [ ] afectar existencias a kardex
+- [x] añadir ventas a kardex
+- [x] afectar existencias a kardex
 - [ ] encontrar clientes al ingresar rut
 - [x] Elegir si es factura/boleta
-- [ ] Elegir forma de pago
+- [x] Elegir forma de pago
 - [ ] Generar un libro de ventas
 
 ### 3. Informes

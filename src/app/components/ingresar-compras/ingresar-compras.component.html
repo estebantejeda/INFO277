@@ -3,6 +3,8 @@
 <div class="container mt-4">
 
   <div *ngIf="successAlert" class="alert alert-success" role="alert">Producto añadido con éxito!</div>
+  <div *ngIf="dangerAlert" class="alert alert-danger" role="alert">Id de artículo duplicado</div>
+
 
   <form [formGroup]="purchaseForm" (ngSubmit)="newPurchase()" class="row g-3">
     <div class="col-md-6">
@@ -31,7 +33,7 @@
     </div>
     <div class="col-md-4">
       <label for="inputStock" class="form-label">Cantidad</label>
-      <input type="number" formControlName="stock" class="form-control" id="inputStock" value="1" min="1" placeholder="1">
+      <input type="number" formControlName="stock" class="form-control" id="inputStock" value="1">
     </div>
     <div class="col-md-4">
       <label for="inputPrice" class="form-label">Costo</label>

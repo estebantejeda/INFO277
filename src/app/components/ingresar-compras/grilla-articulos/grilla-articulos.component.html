@@ -2,7 +2,7 @@
   <table class="table table-striped table-hover">
     <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">ID Producto</th>
       <th scope="col">Descripción</th>
       <th scope="col">Valor</th>
       <th scope="col">Cantidad</th>
@@ -12,12 +12,14 @@
     <tbody>
     <tr *ngFor="let purchase of purchaseList">
       <th scope="row">{{purchase.id}}</th>
+      <td>{{purchase.description}}</td>
       <td>$ {{purchase.price}}</td>
       <td>{{purchase.stock}}</td>
-      <td>$ {{purchase.price}}</td>
       <td>$ {{purchase.total}}</td>
     </tr>
     </tbody>
   </table>
   <button class="btn btn-success btn-lg" (click)="sendPurchase()" type="submit">Aceptar</button>
 </div>
+
+

@@ -9,17 +9,19 @@ import Purchase from "../../models/Purchase";
 })
 export class IngresarComprasComponent implements OnInit {
   successAlert: boolean;
+  dangerAlert: boolean;
   namePlaceHolder: string;
   descriptionPlaceHolder: string;
   purchaseForm: FormGroup;
   purchaseList: Purchase[];
   constructor(private fb: FormBuilder) {
     this.successAlert = false;
+    this.dangerAlert = false;
     this.namePlaceHolder = "";
     this.descriptionPlaceHolder = "";
     this.purchaseList = [];
     this.purchaseForm = this.fb.group({
-      docNum: ['', Validators.required],
+      docNumber: ['', Validators.required],
       date: ['', Validators.required],
       rut: ['', Validators.required],
       id: ['', Validators.required],
@@ -33,8 +35,14 @@ export class IngresarComprasComponent implements OnInit {
   }
 
   newPurchase(){
+    const duplicate = this.purchaseList.find(x => x.id === this.purchaseForm.value.id)
+    if(duplicate){
+      this.dangerAlert = true;
+      setTimeout(() => this.dangerAlert = false, 2000);
+      return;
+    }
     const purchase = new Purchase(
-      this.purchaseForm.value.docNum,
+      this.purchaseForm.value.docNumber,
       this.purchaseForm.value.date,
       this.purchaseForm.value.rut,
       this.purchaseForm.value.id,
