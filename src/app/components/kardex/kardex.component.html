@@ -14,10 +14,10 @@
     </thead>
     <tbody>
     <tr *ngFor="let kardex of kardexList">
-      <th scope="row">{{kardex.purchase_ledger.productId}}</th>
-      <th>{{kardex.purchase_ledger.date | date: 'dd/MM/yyyy'}}</th>
-      <th>{{kardex.purchase_ledger.docNumber}}</th>
-      <th>{{kardex.purchase_ledger.price}}</th>
+      <th scope="row">{{kardex.productId}}</th>
+      <th>{{kardex.date | date: 'dd/MM/yyyy'}}</th>
+      <th>{{kardex.docNumber}}</th>
+      <th>{{kardex.price}}</th>
       <th>{{kardex.quantity}}</th>
       <th>{{kardex.assets}}</th>
     </tr>
