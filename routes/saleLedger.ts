@@ -3,6 +3,6 @@ import * as saleLedger from '../controllers/saleLedger';
 
 const router = Router();
 
-router.get('/saleLedger', saleLedger.getSaleLedger);
+router.post('/saleLedger', saleLedger.postSale);
 
 export default router;
