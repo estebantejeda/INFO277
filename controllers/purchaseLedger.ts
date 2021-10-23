@@ -7,7 +7,7 @@ import Product from "../models/product";
 export const postPurchase = async (req: Request, res: Response) =>{
     if(req.body.length === 0) return res.json({
         ok: false,
-        msge: "No se ingresaron compras"
+        msge: "Purchases not Found"
     });
     for (let purchase of req.body){
         const product = await Product.findByPk(purchase.id);
@@ -28,7 +28,7 @@ export const postPurchase = async (req: Request, res: Response) =>{
             stock: purchase.stock,
             price: purchase.price,
             total: purchase.total,
-            providerId: provider?.getDataValue("id"),
+            providerId: await provider.getDataValue("id"),
             productId: purchase.id
         });
         await Kardex.create({
@@ -42,7 +42,7 @@ export const postPurchase = async (req: Request, res: Response) =>{
     }
     return res.json({
         ok: true,
-        msge: "Compra creada correctamente"
+        msge: "Purchase Successful"
     });
 }
 
