@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import Product from "../models/product";
-import Provider from "../models/provider";
+import Customer from "../models/customer";
 import SaleLedger from "../models/saleLedger";
 import Kardex from "../models/kardex";
 
@@ -20,10 +20,10 @@ export const postSale = async (req: Request, res: Response) => {
             ok: false,
             msge: "Out of Stock"
         });
-        const provider = await Provider.findOne({where: {rut: sale.rut}});
-        if(!provider) return res.json({
+        const customer = await Customer.findOne({where: {rut: sale.rut}});
+        if(!customer) return res.json({
             ok: false,
-            msge: "Provider ID Not Found"
+            msge: "Customer ID Not Found"
         });
         await product.decrement('stock', {by: sale.stock});
         await SaleLedger.create({
@@ -34,7 +34,7 @@ export const postSale = async (req: Request, res: Response) => {
             stock: sale.stock,
             price: sale.price,
             total: sale.total,
-            providerId: await provider.getDataValue("id"),
+            customerId: await customer.getDataValue("id"),
             productId: sale.id
         });
         await Kardex.create({

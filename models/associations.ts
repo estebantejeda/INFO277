@@ -1,6 +1,7 @@
 import Product from "./product";
-import PurchaseLedger from "./purchaseLedger";
 import Provider from "./provider";
+import Customer from "./customer";
+import PurchaseLedger from "./purchaseLedger";
 import SaleLedger from "./saleLedger";
 
 const init = () => {
@@ -19,10 +20,10 @@ const init = () => {
     });
     PurchaseLedger.belongsTo(Product);
 
-    Provider.hasOne(SaleLedger, {
+    Customer.hasOne(SaleLedger, {
         foreignKey: {allowNull: false}
     });
-    SaleLedger.belongsTo(Provider);
+    SaleLedger.belongsTo(Customer);
 }
 
 export default init;
