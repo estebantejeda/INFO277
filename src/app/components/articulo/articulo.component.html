@@ -17,15 +17,15 @@
     </div>
     <div class="col-md-4">
       <label for="inputCost" class="form-label">Costo</label>
-      <input type="number" formControlName="cost" class="form-control" id="inputCost">
+      <input type="number" formControlName="cost" class="form-control" id="inputCost" min="1">
     </div>
     <div class="col-md-4">
       <label for="inputPrice" class="form-label">Precio</label>
-      <input type="number" formControlName="price" class="form-control" id="inputPrice">
+      <input type="number" formControlName="price" class="form-control" id="inputPrice" min="1">
     </div>
     <div class="col-md-4">
       <label for="inputStock" class="form-label">Stock</label>
-      <input type="number" formControlName="stock" class="form-control" id="inputStock">
+      <input type="number" formControlName="stock" class="form-control" id="inputStock" min="1">
     </div>
     <div class="d-grid gap-2 mt-4">
       <button class="btn btn-success btn-lg" [disabled]="productForm.invalid" type="submit">Aceptar</button>
