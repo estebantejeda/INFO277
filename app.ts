@@ -5,6 +5,8 @@ import router from './routes/index';
 import associations from './models/associations';
 import cors from 'cors';
 
+import entry from './config/evaluationEntry';
+
 const app = express();
 associations();
 
@@ -16,6 +18,9 @@ app.use(express.json());
 app.use(router);
 
 database.sync({force: true}).then(() => {
-    app.listen(PORT, () => console.log("Conexión establecida"));
+    app.listen(PORT, () => {
+        console.log("Conexión establecida");
+        entry().then(x => console.log(x));
+    });
 });
 
