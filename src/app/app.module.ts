@@ -19,6 +19,7 @@ import { GrillaArticulosComponent } from './components/ingresar-compras/grilla-a
 import { IngresarVentasComponent } from './components/ingresar-ventas/ingresar-ventas.component';
 import { GrillaVentasComponent } from './components/ingresar-ventas/grilla-ventas/grilla-ventas.component';
 import { FiltroKardexPipe } from './pipes/filtro-kardex.pipe';
+import { LibroVentasComponent } from './components/libro-ventas/libro-ventas.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FiltroKardexPipe } from './pipes/filtro-kardex.pipe';
     IngresarVentasComponent,
     GrillaVentasComponent,
     FiltroKardexPipe,
+    LibroVentasComponent,
   ],
   imports: [
     BrowserModule,

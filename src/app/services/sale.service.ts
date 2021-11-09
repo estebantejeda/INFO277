@@ -17,4 +17,8 @@ export class SaleService {
     return this.http.post<any>(address, form);
   }
 
+  getSale(): Observable<Sale[]>{
+    let address = `${this.url}/saleLedger`;
+    return this.http.get<Sale[]>(address);
+  }
 }
