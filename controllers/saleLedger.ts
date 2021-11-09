@@ -51,3 +51,9 @@ export const postSale = async (req: Request, res: Response) => {
         msge: "Sale Successful"
     });
 }
+
+export const getAllSale = (_req: Request, res: Response) => {
+    SaleLedger.findAll()
+        .then(sale => res.json(sale))
+        .catch(err => res.json(err));
+}
