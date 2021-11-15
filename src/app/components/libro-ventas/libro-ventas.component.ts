@@ -8,7 +8,6 @@ import Sale from "../../models/Sale";
   styleUrls: ['./libro-ventas.component.css']
 })
 export class LibroVentasComponent implements OnInit {
-// (costo+utilidad)*19% = precio
   saleList: Sale[];
   constructor(private api: SaleService) {
     this.saleList = [];
