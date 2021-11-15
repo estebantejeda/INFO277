@@ -14,10 +14,7 @@ export class LibroVentasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getSale().subscribe(data => {
-      this.saleList = data;
-      console.log(data);
-    });
+    this.api.getSale().subscribe(data => this.saleList = data)
   }
 
 }

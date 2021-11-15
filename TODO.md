@@ -52,7 +52,7 @@
 - [ ] encontrar clientes al ingresar rut
 - [x] Elegir si es factura/boleta
 - [x] Elegir forma de pago
-- [ ] Generar un libro de ventas
+- [x] Generar un libro de ventas
 
 ### 3. Informes
 
