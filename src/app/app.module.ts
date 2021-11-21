@@ -20,6 +20,9 @@ import { IngresarVentasComponent } from './components/ingresar-ventas/ingresar-v
 import { GrillaVentasComponent } from './components/ingresar-ventas/grilla-ventas/grilla-ventas.component';
 import { FiltroKardexPipe } from './pipes/filtro-kardex.pipe';
 import { LibroVentasComponent } from './components/libro-ventas/libro-ventas.component';
+import { NuevaCompraComponent } from './components/nueva-compra/nueva-compra.component';
+import { LibroComprasComponent } from './components/libro-compras/libro-compras.component';
+import { GrillaCompraComponent } from './components/nueva-compra/grilla-compra/grilla-compra.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { LibroVentasComponent } from './components/libro-ventas/libro-ventas.com
     GrillaVentasComponent,
     FiltroKardexPipe,
     LibroVentasComponent,
+    NuevaCompraComponent,
+    LibroComprasComponent,
+    GrillaCompraComponent,
   ],
   imports: [
     BrowserModule,

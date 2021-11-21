@@ -1,0 +1,55 @@
+<h1 class="mt-4">Nueva Compra</h1>
+
+<div class="container mt-4">
+
+  <form  [formGroup]="purchaseForm" (ngSubmit)="newPurchase()" class="row g-3">
+    <div class="col-md-3">
+      <label for="inputDate" class="form-label">Fecha</label>
+      <input type="date" formControlName="date" class="form-control" id="inputDate">
+    </div>
+    <div class="col-md-4">
+      <label for="inputDocNum" class="form-label">Número de Documento</label>
+      <input type="number" formControlName="docNumber" class="form-control" id="inputDocNum">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Tipo de documento</label>
+      <select class="form-select" aria-label="Default select example" formControlName="docType" id="inputDocType">
+        <option value=1>Fatura</option>
+        <option value=2>Boleta</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputCorrelative" class="form-label">Correlativo</label>
+      <input type="number" formControlName="correlative" class="form-control" id="inputCorrelative">
+    </div>
+    <div class="col-md-6">
+      <label for="inputRut" class="form-label">Rut Proveedor</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Nombre Proveedor</label>
+      <input class="form-control" id="inputName" type="text" disabled>
+    </div>
+    <div class="col-md-4">
+      <label for="inputAccount" class="form-label">Cuenta</label>
+      <input type="number" formControlName="accountId" class="form-control" id="inputAccount">
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Glosa</label>
+      <input class="form-control" id="accountName" type="text" disabled>
+    </div>
+    <div class="col-md-4">
+      <label for="inputNet" class="form-label">Neto</label>
+      <input type="text" formControlName="net" class="form-control" id="inputNet">
+    </div>
+
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" type="submit">Agregar</button>
+    </div>
+  </form>
+
+</div>
+
+<div class="container mt-4">
+  <app-grilla-compra [purchaseList]="purchaseList" ></app-grilla-compra>
+</div>

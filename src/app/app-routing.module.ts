@@ -11,6 +11,8 @@ import {ListaClientesComponent} from "./components/lista-clientes/lista-clientes
 import {IngresarComprasComponent} from "./components/ingresar-compras/ingresar-compras.component";
 import {IngresarVentasComponent} from "./components/ingresar-ventas/ingresar-ventas.component";
 import { LibroVentasComponent } from './components/libro-ventas/libro-ventas.component';
+import {NuevaCompraComponent} from "./components/nueva-compra/nueva-compra.component";
+import {LibroComprasComponent} from "./components/libro-compras/libro-compras.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path: 'customer', component: ListaClientesComponent},
   {path: 'newPurchase', component: IngresarComprasComponent},
   {path: 'newSale', component: IngresarVentasComponent},
-  {path: 'saleLedger', component: LibroVentasComponent}
+  {path: 'saleLedger', component: LibroVentasComponent},
+  {path: 'purchase', component: NuevaCompraComponent},
+  {path: 'purchaseLedger', component: LibroComprasComponent}
 ];
 
 @NgModule({
