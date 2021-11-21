@@ -6,6 +6,7 @@ import provider from "./provider";
 import saleLedger from "./saleLedger";
 import kardex from "./kardex";
 import purchasLedger from "./purchaseLedger"
+import purchase from "./purchase";
 
 const router = Router();
 
@@ -15,5 +16,6 @@ router.use(provider);
 router.use(saleLedger);
 router.use(kardex);
 router.use(purchasLedger);
+router.use(purchase);
 
 export default router;

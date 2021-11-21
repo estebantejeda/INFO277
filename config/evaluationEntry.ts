@@ -4,6 +4,7 @@ import PurchaseLedger from "../models/purchaseLedger";
 import Kardex from "../models/kardex";
 import Customer from "../models/customer";
 import SaleLedger from "../models/saleLedger";
+import Account from "../models/Account";
 
 const init = async () => {
     await createProducts();
@@ -11,6 +12,7 @@ const init = async () => {
     await createPurchases();
     await createCustomers();
     await createSales();
+    await createAccounts();
     return new Promise((resolve) => {
         resolve("BD cargada con éxito");
     });
@@ -223,4 +225,17 @@ const createSales = async () => {
     });
 }
 
+const createAccounts = async () => {
+    await Account.bulkCreate([
+        {name: "Mercadería"},
+        {name: "Fletes"},
+        {name: "Mat. Oficina"},
+        {name: "Luz"},
+        {name: "Agua"},
+        {name: "Teléfono"},
+        {name: "Celular"},
+        {name: "Arriendo"},
+        {name: "Gastos comunes"},
+    ]);
+}
 export default init;
