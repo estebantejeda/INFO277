@@ -1,0 +1,20 @@
+cdk-virtual-scroll-viewport{
+  height: 200px;
+}
+i{
+  color: green;
+}
+
+.pd{
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+h5{
+  text-align: center;
+}
+
+button{
+  text-align: center;
+}

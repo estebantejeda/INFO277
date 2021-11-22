@@ -5,7 +5,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import {ListaArticulosComponent} from './components/lista-articulos/lista-articulos.component';
@@ -23,6 +23,8 @@ import { LibroVentasComponent } from './components/libro-ventas/libro-ventas.com
 import { NuevaCompraComponent } from './components/nueva-compra/nueva-compra.component';
 import { LibroComprasComponent } from './components/libro-compras/libro-compras.component';
 import { GrillaCompraComponent } from './components/nueva-compra/grilla-compra/grilla-compra.component';
+import { ListaCuentasComponent } from './components/nueva-compra/lista-cuentas/lista-cuentas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,12 +46,15 @@ import { GrillaCompraComponent } from './components/nueva-compra/grilla-compra/g
     NuevaCompraComponent,
     LibroComprasComponent,
     GrillaCompraComponent,
+    ListaCuentasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
