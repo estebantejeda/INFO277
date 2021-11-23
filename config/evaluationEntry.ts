@@ -5,6 +5,9 @@ import Kardex from "../models/kardex";
 import Customer from "../models/customer";
 import SaleLedger from "../models/saleLedger";
 import Account from "../models/Account";
+import Purchase from "../models/Purchase";
+import Afp from "../models/Afp";
+import Isapre from "../models/Isapre";
 
 const init = async () => {
     await createProducts();
@@ -13,6 +16,9 @@ const init = async () => {
     await createCustomers();
     await createSales();
     await createAccounts();
+    await createPurchaseLedger();
+    await createAfp();
+    await createIsapre();
     return new Promise((resolve) => {
         resolve("BD cargada con éxito");
     });
@@ -238,4 +244,67 @@ const createAccounts = async () => {
         {name: "Gastos comunes"},
     ]);
 }
+
+const createPurchaseLedger = async () => {
+    await Purchase.create({
+        docNumber: 99999,
+        docType: 1,
+        providerId: 1,
+        correlative: 1,
+        net: 4000,
+        isCredit: true,
+        date: new Date(),
+        accountId: 2
+    });
+}
+
+const createAfp = async () => {
+    await Afp.bulkCreate([
+        {
+            name: "A.F.P. CONCORDIA",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. EL LIBERTADOR",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. HABITAT",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. UNO",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. MAGISTER",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. PLANVITAL",
+            tax: randomTax()
+        },
+        {
+            name: "A.F.P. PROVIDA",
+            tax: randomTax()
+        }
+    ]);
+}
+
+const createIsapre = async () => {
+    await Isapre.bulkCreate([
+        {name: "ISAPRE CRUZ BLANCA"},
+        {name: "ISAPRE CONSALUD"},
+        {name: "ISAPRE COLMENA GOLDEN CROSS"},
+        {name: "ISAPRE BANMEDICA"},
+        {name: "ISAPRE MAS VIDA"},
+    ]);
+}
+
+const randomTax = (): number => {
+    const random = Math.random()+1;
+    const tax = random.toFixed(2);
+    return Number(tax);
+}
+
 export default init;
