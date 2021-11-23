@@ -302,7 +302,7 @@ const createIsapre = async () => {
 }
 
 const randomTax = (): number => {
-    const random = Math.random()+1;
+    const random = Math.random()*10;
     const tax = random.toFixed(2);
     return Number(tax);
 }

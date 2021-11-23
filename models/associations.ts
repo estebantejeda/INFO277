@@ -5,6 +5,9 @@ import PurchaseLedger from "./purchaseLedger";
 import SaleLedger from "./saleLedger";
 import Purchase from "./Purchase";
 import Account from "./Account";
+import Afp from "./Afp";
+import Employee from "./Employee";
+import Isapre from "./Isapre";
 
 const init = () => {
     Product.hasOne(PurchaseLedger, {
@@ -36,6 +39,16 @@ const init = () => {
         foreignKey: {allowNull: false}
     });
     Purchase.belongsTo(Account);
+
+    Afp.hasOne(Employee, {
+        foreignKey: {allowNull: true}
+    });
+    Employee.belongsTo(Afp);
+
+    Isapre.hasOne(Employee, {
+        foreignKey: {allowNull: true}
+    });
+    Employee.belongsTo(Isapre);
 }
 
 export default init;
