@@ -42,7 +42,6 @@ export class NuevaCompraComponent implements OnInit {
 
   addPurchase(data: PurchaseLedger){
     this.purchaseList.push(data);
-    console.log(this.purchaseList);
   }
 
 }

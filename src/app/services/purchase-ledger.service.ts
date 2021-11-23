@@ -16,4 +16,9 @@ export class PurchaseLedgerService {
     let address = `${this.url}/purchase`;
     return this.http.post<PurchaseLedger[]>(address, form);
   }
+
+  getPurchase(): Observable<PurchaseLedger[]>{
+    let address = `${this.url}/purchase`;
+    return this.http.get<PurchaseLedger[]>(address);
+  }
 }

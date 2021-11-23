@@ -21,4 +21,9 @@ export class GrillaCompraComponent implements OnInit {
     });
   }
 
+  taxPurchase(){
+    const netValue = this.purchaseList.reduce((x: number, y: any) => x+parseInt(y.net), 0);
+    return netValue;
+  }
+
 }

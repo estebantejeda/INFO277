@@ -27,7 +27,6 @@ export class ListaCuentasComponent implements OnInit {
     this.api.postAccount(account).subscribe(data => {
       this.accountForm.reset();
       this.accountList.push(data);
-      console.log(data);
     });
   }
 
