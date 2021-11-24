@@ -49,7 +49,7 @@ export const getAllPurchase = async (_req: Request, res: Response) => {
 }
 
 export const getSumPurchase = async (_req: Request, res: Response) => {
-    //SELECT accountId, name, SUM(net) FROM purchases JOIN accounts ON purchases.accountId=accounts.id GROUP BY accountId;
+    //SELECT accountId, name, SUM(net) as 'total' FROM purchases JOIN accounts ON purchases.accountId=accounts.id GROUP BY accountId;
     const purchases = await Purchase.findAll({
         attributes: [
             'accountId',
