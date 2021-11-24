@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Isapre from "../../../models/Isapre";
+import {IsapreService} from "../../../services/isapre.service";
 
 @Component({
   selector: 'app-listar-isapre',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-isapre.component.css']
 })
 export class ListarIsapreComponent implements OnInit {
-
-  constructor() { }
+  isapreList: Isapre[];
+  constructor(private api: IsapreService) {
+    this.isapreList = [];
+  }
 
   ngOnInit(): void {
+    this.api.getIsapre().subscribe(data => this.isapreList = data);
   }
 
 }
