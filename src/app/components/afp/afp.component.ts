@@ -26,7 +26,6 @@ export class AfpComponent implements OnInit {
       this.afpForm.value.tax
     );
     this.api.postAfp(afp).subscribe(data => {
-      console.log(data);
       this.afpForm.reset();
     });
   }

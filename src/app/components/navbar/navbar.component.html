@@ -3,43 +3,71 @@
     <a class="navbar-brand" href="#">ERP</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/newArticle">Nuevo artículo</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Artículos</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newArticle">Nuevo artículo</a></li>
+            <li><a class="dropdown-item" routerLink="/article">Listar artículos</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/article">Listar artículos</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Proveedores</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newProvider">Nuevo proveedor</a></li>
+            <li><a class="dropdown-item" routerLink="/provider">Listar proveedores</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/newProvider">Nuevo Proveedor</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clientes</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newCustomer">Nuevo cliente</a></li>
+            <li><a class="dropdown-item" routerLink="/customer">Listar clientes</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/provider">Listar Proveedores</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Compras</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newPurchase">Nuevo compra de artículo</a></li>
+            <li><a class="dropdown-item" routerLink="/purchase">Nueva compra de cargo</a></li>
+            <li><a class="dropdown-item" routerLink="/purchaseLedger">Libro de compra</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/newPurchase">Ingresar Compra</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ventas</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newSale">Nueva venta</a></li>
+            <li><a class="dropdown-item" routerLink="/saleLedger">Libro de ventas</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/purchase">Compra</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Personal</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/newSale">Nueva venta</a></li>
+            <li><a class="dropdown-item" routerLink="/saleLedger">Libro de ventas</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/purchaseLedger">Libro de Compra</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Otros</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/afp">AFP</a></li>
+            <li><a class="dropdown-item" routerLink="/isapre">Isapres</a></li>
+            <li><a class="dropdown-item" routerLink="/parameters">Parámetros</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/newCustomer">Nuevo Cliente</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/customer">Listar Clientes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/newSale">Venta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/saleLedger">Libro de Ventas</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/kardex">Kardex</a>
         </li>
       </ul>
     </div>
   </div>
+
+
 </nav>

@@ -26,6 +26,11 @@ import { GrillaCompraComponent } from './components/nueva-compra/grilla-compra/g
 import { ListaCuentasComponent } from './components/nueva-compra/lista-cuentas/lista-cuentas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListarCargosComponent } from './components/libro-compras/listar-cargos/listar-cargos.component';
+import { AfpComponent } from './components/afp/afp.component';
+import { IsapreComponent } from './components/isapre/isapre.component';
+import { ParametrosComponent } from './components/parametros/parametros.component';
+import { ListarAfpComponent } from './components/afp/listar-afp/listar-afp.component';
+import { ListarIsapreComponent } from './components/isapre/listar-isapre/listar-isapre.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,11 @@ import { ListarCargosComponent } from './components/libro-compras/listar-cargos/
     GrillaCompraComponent,
     ListaCuentasComponent,
     ListarCargosComponent,
+    AfpComponent,
+    IsapreComponent,
+    ParametrosComponent,
+    ListarAfpComponent,
+    ListarIsapreComponent,
   ],
   imports: [
     BrowserModule,

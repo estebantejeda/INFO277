@@ -1,5 +1,5 @@
 class Customer{
-  id?: string;
+  id?: number;
   rut: string;
   name: string;
   address: string;
