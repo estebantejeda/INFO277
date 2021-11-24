@@ -31,6 +31,7 @@ import { IsapreComponent } from './components/isapre/isapre.component';
 import { ParametrosComponent } from './components/parametros/parametros.component';
 import { ListarAfpComponent } from './components/afp/listar-afp/listar-afp.component';
 import { ListarIsapreComponent } from './components/isapre/listar-isapre/listar-isapre.component';
+import { ListarParametrosComponent } from './components/parametros/listar-parametros/listar-parametros.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ListarIsapreComponent } from './components/isapre/listar-isapre/listar-
     ParametrosComponent,
     ListarAfpComponent,
     ListarIsapreComponent,
+    ListarParametrosComponent,
   ],
   imports: [
     BrowserModule,
