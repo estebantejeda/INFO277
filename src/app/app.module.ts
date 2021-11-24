@@ -25,6 +25,7 @@ import { LibroComprasComponent } from './components/libro-compras/libro-compras.
 import { GrillaCompraComponent } from './components/nueva-compra/grilla-compra/grilla-compra.component';
 import { ListaCuentasComponent } from './components/nueva-compra/lista-cuentas/lista-cuentas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListarCargosComponent } from './components/libro-compras/listar-cargos/listar-cargos.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LibroComprasComponent,
     GrillaCompraComponent,
     ListaCuentasComponent,
+    ListarCargosComponent,
   ],
   imports: [
     BrowserModule,
