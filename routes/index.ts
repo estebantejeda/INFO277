@@ -10,6 +10,7 @@ import purchase from "./purchase";
 import account from "./account";
 import afp from "./afp"
 import isapre from "./isapre";
+import parameters from "./parameters";
 
 const router = Router();
 
@@ -23,5 +24,6 @@ router.use(purchase);
 router.use(account);
 router.use(afp);
 router.use(isapre);
+router.use(parameters);
 
 export default router;
