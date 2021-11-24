@@ -246,7 +246,8 @@ const createAccounts = async () => {
 }
 
 const createPurchaseLedger = async () => {
-    await Purchase.create({
+    await Purchase.bulkCreate([
+    {
         docNumber: 99999,
         docType: 1,
         providerId: 1,
@@ -255,7 +256,38 @@ const createPurchaseLedger = async () => {
         isCredit: true,
         date: new Date(),
         accountId: 2
-    });
+    },
+    {
+        docNumber: 99998,
+        docType: 1,
+        providerId: 1,
+        correlative: 2,
+        net: 5000,
+        isCredit: true,
+        date: new Date(),
+        accountId: 2
+    },
+    {
+        docNumber: 99996,
+        docType: 1,
+        providerId: 1,
+        correlative: 3,
+        net: 5000,
+        isCredit: true,
+        date: new Date(),
+        accountId: 2
+    },
+    {
+        docNumber: 99997,
+        docType: 1,
+        providerId: 1,
+        correlative: 4,
+        net: 5000,
+        isCredit: true,
+        date: new Date(),
+        accountId: 3
+    }
+    ]);
 }
 
 const createAfp = async () => {
