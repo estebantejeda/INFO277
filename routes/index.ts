@@ -8,6 +8,7 @@ import kardex from "./kardex";
 import purchasLedger from "./purchaseLedger"
 import purchase from "./purchase";
 import account from "./account";
+import afp from "./afp"
 
 const router = Router();
 
@@ -19,5 +20,7 @@ router.use(kardex);
 router.use(purchasLedger);
 router.use(purchase);
 router.use(account);
+router.use(afp);
+
 
 export default router;
