@@ -59,7 +59,7 @@ export const getSumPurchase = async (_req: Request, res: Response) => {
             model: Account,
             attributes: ['name']
         }],
-        group: 'accountId',
+        group: 'accountId'
     });
     return res.json(purchases);
 }
