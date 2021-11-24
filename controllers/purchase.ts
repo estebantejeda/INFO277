@@ -2,6 +2,7 @@ import {Request, Response} from "express";
 import Purchase from "../models/Purchase";
 import Provider from "../models/provider";
 import Account from "../models/Account";
+import {fn, col} from "sequelize";
 
 export const postPurchase = async (req: Request, res: Response) => {
     if(req.body.length === 0) return res.json({
@@ -44,5 +45,20 @@ export const getAllPurchase = async (_req: Request, res: Response) => {
         }]
     });
     if(Object.entries(purchases).length === 0) return res.json({error: "Purchase not found"});
+    return res.json(purchases);
+}
+
+export const getSumPurchase = async (_req: Request, res: Response) => {
+    const purchases = await Purchase.findAll({
+        attributes: [
+            'accountId',
+            [fn('sum', col('net')), 'total']
+        ],
+        include: [{
+            model: Account,
+            attributes: ['name']
+        }],
+        group: 'accountId',
+    });
     return res.json(purchases);
 }
