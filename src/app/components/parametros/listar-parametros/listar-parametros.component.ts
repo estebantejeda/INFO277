@@ -14,10 +14,7 @@ export class ListarParametrosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getParameters().subscribe(data => {
-      console.log(data);
-      this.parameterList = data
-    });
+    this.api.getParameters().subscribe(data => this.parameterList = data);
   }
 
 }

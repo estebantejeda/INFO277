@@ -32,6 +32,8 @@ import { ParametrosComponent } from './components/parametros/parametros.componen
 import { ListarAfpComponent } from './components/afp/listar-afp/listar-afp.component';
 import { ListarIsapreComponent } from './components/isapre/listar-isapre/listar-isapre.component';
 import { ListarParametrosComponent } from './components/parametros/listar-parametros/listar-parametros.component';
+import { IngresarPersonalComponent } from './components/ingresar-personal/ingresar-personal.component';
+import { IngresarHaberesDescuentosComponent } from './components/ingresar-haberes-descuentos/ingresar-haberes-descuentos.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { ListarParametrosComponent } from './components/parametros/listar-parame
     ListarAfpComponent,
     ListarIsapreComponent,
     ListarParametrosComponent,
+    IngresarPersonalComponent,
+    IngresarHaberesDescuentosComponent,
   ],
   imports: [
     BrowserModule,
