@@ -9,6 +9,7 @@ import Purchase from "../models/Purchase";
 import Afp from "../models/Afp";
 import Isapre from "../models/Isapre";
 import Parameters from "../models/Parameters";
+import Employee from "../models/Employee";
 
 const init = async () => {
     await createProducts();
@@ -21,6 +22,7 @@ const init = async () => {
     await createAfp();
     await createIsapre();
     await createParameters();
+    await createEmployee();
     return new Promise((resolve) => {
         resolve("BD cargada con éxito");
     });
@@ -342,6 +344,20 @@ const createParameters = async () => {
         refugeesAmount: 13823,
         daysPerMonth: daysInMonth(),
         incomeTax: 11
+    });
+}
+
+const createEmployee = async () => {
+    await Employee.create({
+        rut: "3579246-8",
+        name: "Juán Topo",
+        gender: 1,
+        birthDate: new Date(),
+        refugees: 1,
+        baseSalary: 150000,
+        salesCommission: 15,
+        afpId: 1,
+        isapreId: 1
     });
 }
 
