@@ -8,6 +8,7 @@ import Account from "../models/Account";
 import Purchase from "../models/Purchase";
 import Afp from "../models/Afp";
 import Isapre from "../models/Isapre";
+import Parameters from "../models/Parameters";
 
 const init = async () => {
     await createProducts();
@@ -19,6 +20,7 @@ const init = async () => {
     await createPurchaseLedger();
     await createAfp();
     await createIsapre();
+    await createParameters();
     return new Promise((resolve) => {
         resolve("BD cargada con éxito");
     });
@@ -333,10 +335,26 @@ const createIsapre = async () => {
     ]);
 }
 
+const createParameters = async () => {
+    await Parameters.create({
+        uf: 30683,
+        utm: 56476,
+        refugeesAmount: 13823,
+        daysPerMonth: daysInMonth(),
+        incomeTax: 11
+    });
+}
+
 const randomTax = (): number => {
     const random = Math.random()*10;
     const tax = random.toFixed(2);
     return Number(tax);
+}
+
+const daysInMonth = (): number => {
+    const now = new Date();
+    const days = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate()
+    return days;
 }
 
 export default init;
