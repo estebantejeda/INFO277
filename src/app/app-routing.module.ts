@@ -18,6 +18,7 @@ import {IsapreComponent} from "./components/isapre/isapre.component";
 import {ParametrosComponent} from "./components/parametros/parametros.component";
 import {IngresarPersonalComponent} from "./components/ingresar-personal/ingresar-personal.component";
 import {IngresarHaberesDescuentosComponent} from "./components/ingresar-haberes-descuentos/ingresar-haberes-descuentos.component";
+import {ListarPersonalComponent} from "./components/listar-personal/listar-personal.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -36,8 +37,9 @@ const routes: Routes = [
   {path: 'afp', component: AfpComponent},
   {path: 'isapre', component: IsapreComponent},
   {path: 'parameters', component: ParametrosComponent},
-  {path: 'employee', component: IngresarPersonalComponent},
-  {path: 'assetsDiscounts', component: IngresarHaberesDescuentosComponent}
+  {path: 'newEmployee', component: IngresarPersonalComponent},
+  {path: 'assetsDiscounts', component: IngresarHaberesDescuentosComponent},
+  {path: 'employee', component: ListarPersonalComponent}
 ];
 
 @NgModule({

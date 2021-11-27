@@ -1,1 +1,38 @@
-<p>ingresar-haberes-descuentos works!</p>
+<h1 class="mt-4">Ingresar Haberes-Descuentos</h1>
+
+<div class="container mt-4">
+  <form [formGroup]="assetsDiscountForm" (ngSubmit)="newAssetsDiscount()" class="row g-3">
+    <div class="col-md-3">
+      <label for="inputRut" class="form-label">RUT</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="inputName" disabled>
+    </div>
+    <div class="col-md-3">
+      <label for="inputDate" class="form-label">Mes a generar</label>
+      <input type="month" formControlName="date" class="form-control" id="inputDate">
+    </div>
+    <div class="col-md-6">
+      <label for="inputworkedDays" class="form-label">Días trabajados</label>
+      <input type="number" formControlName="workedDays" class="form-control" id="inputWorkedDays">
+    </div>
+    <div class="col-md-6">
+      <label for="inputGratification" class="form-label">Gratificación</label>
+      <input type="number" formControlName="gratification" class="form-control" id="inputGratification">
+    </div>
+    <div class="col-md-6">
+      <label for="inputFamilyWelfare" class="form-label">Número de Cargas</label>
+      <input type="number" formControlName="familyWelfare" class="form-control" id="inputFamilyWelfare">
+    </div>
+    <div class="col-md-6">
+      <label for="inputOtherDiscount" class="form-label">Otros Descuentos</label>
+      <input type="number" formControlName="otherDiscount" class="form-control" id="inputOtherDiscount">
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="assetsDiscountForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+
+</div>
