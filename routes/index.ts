@@ -12,6 +12,7 @@ import afp from "./afp"
 import isapre from "./isapre";
 import parameters from "./parameters";
 import employee from "./employee";
+import assetsDiscount from "./assetsDiscount";
 
 const router = Router();
 
@@ -27,5 +28,6 @@ router.use(afp);
 router.use(isapre);
 router.use(parameters);
 router.use(employee);
+router.use(assetsDiscount);
 
 export default router;

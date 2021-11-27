@@ -3,13 +3,15 @@ import database from "../config/database";
 
 const AssetsDiscount = database.define('assets_discount', {
     workedDays: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     baseSalary: {
         type: DataTypes.INTEGER
     },
     gratification: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     commission: {
         type: DataTypes.DOUBLE
@@ -36,16 +38,22 @@ const AssetsDiscount = database.define('assets_discount', {
         type: DataTypes.DOUBLE
     },
     familyWelfare: {
-        type: DataTypes.DOUBLE
+        type: DataTypes.DOUBLE,
+        allowNull: false
     },
     otherDiscount: {
-        type: DataTypes.DOUBLE
+        type: DataTypes.DOUBLE,
+        allowNull: false
     },
     totalDiscount: {
         type: DataTypes.DOUBLE
     },
     netSalary: {
         type: DataTypes.DOUBLE
+    },
+    date: {
+        type: DataTypes.DATE,
+        allowNull: false
     }
 });
 
