@@ -5,5 +5,7 @@ const router = Router();
 
 router.post('/assetsDiscount', assetsDiscount.postAssetsDiscount);
 router.post('/assetsDiscountGenerate', assetsDiscount.postGenerateAssetsDiscount);
+router.get('/assetsDiscount/:employeeId', assetsDiscount.getAssetsDiscount);
+router.get('/assetsDiscountDetail/:id', assetsDiscount.getAssetsDiscountDetail);
 
 export default router;

@@ -4,6 +4,7 @@ import Employee from "../models/Employee";
 import {Op} from 'sequelize';
 import Parameters from "../models/Parameters";
 import Afp from "../models/Afp";
+import Isapre from "../models/Isapre";
 
 export const postAssetsDiscount = async (req: Request, res: Response) => {
     if(!req.body.rut) return res.json({
@@ -106,6 +107,55 @@ export const postGenerateAssetsDiscount = async (req: Request, res: Response) =>
         totalDiscount,
         netSalary
     },{where: {id: assetsDiscountId}})
-        .then(x => console.log(x))
-        .catch()
+        .then(() => res.json({
+            ok: true,
+            msge: "Assets-Discount successful generate"
+        }))
+        .catch(err => res.json(err));
 }
+
+export const getAssetsDiscount = async (req: Request, res: Response) => {
+    const assetsDiscount = await AssetsDiscount.findAll({
+        attributes: ['id', 'date', 'netSalary'],
+        include: [{
+            model: Employee,
+            attributes: ['name']
+        }],
+        where: {employeeId: req.params.employeeId}
+    });
+    if(Object.entries(assetsDiscount).length === 0) return res.json({
+        ok: false,
+        error: "Assets-Discount not found"}
+    );
+    return res.json(assetsDiscount);
+}
+
+export const getAssetsDiscountDetail = async (req: Request, res: Response) => {
+    const assetsDiscount = await AssetsDiscount.findByPk(req.params.id, {
+        attributes: {
+            exclude: ['createdAt', 'updatedAt', 'employeeId']
+        },
+        include: [{
+            model: Employee,
+            attributes: {
+                exclude: ['createdAt', 'updatedAt', 'afpId', 'isapreId']
+            },
+            include: [
+                {
+                    model: Afp,
+                    attributes: {exclude: ['createdAt', 'updatedAt']}
+                },
+                {
+                    model: Isapre,
+                    attributes: {exclude: ['createdAt', 'updatedAt']}
+                }
+            ]
+        }]
+    });
+    if (assetsDiscount == null) return res.json({
+        ok: false,
+        msge: "Assets-Discount not found with id"
+    });
+    return res.json(assetsDiscount);
+}
+
