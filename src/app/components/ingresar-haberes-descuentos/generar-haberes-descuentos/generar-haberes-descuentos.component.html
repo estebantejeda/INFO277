@@ -1,0 +1,17 @@
+<h1 class="mt-4">Generar haberes-descuentos</h1>
+
+<div class="container mt-4">
+  <form [formGroup]="assetsDiscountGeneratorForm" (ngSubmit)="newAssetsDiscountGenerator()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputRut" class="form-label">RUT</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-6">
+      <label for="inputDate" class="form-label">Fecha</label>
+      <input type="month" formControlName="date" class="form-control" id="inputDate">
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="assetsDiscountGeneratorForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+</div>
