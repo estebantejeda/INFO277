@@ -1,1 +1,40 @@
-<p>listar-personal works!</p>
+<h1 class="mt-4">Lista de Personal</h1>
+
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">RUT</th>
+      <th scope="col">Género</th>
+      <th scope="col">Fecha de Nacimiento</th>
+      <th scope="col">Cargas</th>
+      <th scope="col">Sueldo base</th>
+      <th scope="col">Comisión ventas</th>
+      <th scope="col">AFP</th>
+      <th scope="col">Isapre</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employeeList">
+      <th scope="row">{{employee.id}}</th>
+      <td>{{employee.name}}</td>
+      <td>{{employee.rut}}</td>
+      <td>{{employee.gender}}</td>
+      <td>{{employee.birthDate | date: 'dd/MM/yyyy'}}</td>
+      <td>{{employee.refugees}}</td>
+      <td>$ {{employee.baseSalary}}</td>
+      <td>{{employee.salesCommission}} %</td>
+      <td>{{employee.afpId}}</td>
+      <td>{{employee.isapreId}}</td>
+      <td>
+        <span class="badge bg-primary">
+          <a routerLink="/employee/assetsDiscount/{{employee.id}}">Ver cotizaciones</a>
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

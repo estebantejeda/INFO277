@@ -35,6 +35,9 @@ import { ListarParametrosComponent } from './components/parametros/listar-parame
 import { IngresarPersonalComponent } from './components/ingresar-personal/ingresar-personal.component';
 import { IngresarHaberesDescuentosComponent } from './components/ingresar-haberes-descuentos/ingresar-haberes-descuentos.component';
 import { ListarPersonalComponent } from './components/listar-personal/listar-personal.component';
+import { GenerarHaberesDescuentosComponent } from './components/ingresar-haberes-descuentos/generar-haberes-descuentos/generar-haberes-descuentos.component';
+import { ListarCotizacionPersonalComponent } from './components/listar-cotizacion-personal/listar-cotizacion-personal.component';
+import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +70,9 @@ import { ListarPersonalComponent } from './components/listar-personal/listar-per
     IngresarPersonalComponent,
     IngresarHaberesDescuentosComponent,
     ListarPersonalComponent,
+    GenerarHaberesDescuentosComponent,
+    ListarCotizacionPersonalComponent,
+    CotizacionesComponent,
   ],
   imports: [
     BrowserModule,

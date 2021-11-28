@@ -32,7 +32,6 @@ export class IngresarHaberesDescuentosComponent implements OnInit {
       this.assetsDiscountForm.value.otherDiscount,
       this.assetsDiscountForm.value.rut,
       this.assetsDiscountForm.value.date
-
     );
     this.api.postAssetsDiscount(assetsDiscount).subscribe(data => {
       console.log(data);

@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import AssetsDiscount from "../models/AssetsDiscount";
 import {Observable} from "rxjs";
+import AssetsDiscountGenerator from "../models/Interfaces/AssetsDiscountGenerator";
+import AssetsDiscountEmployee from "../models/Interfaces/AssetsDiscountEmployee";
+import AssetsDiscountDetails from "../models/Interfaces/AssetsDiscountDetails";
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +20,22 @@ export class AssetsDiscountService {
     return this.http.post<any>(address, form);
   }
 
-  getEmployee():Observable<AssetsDiscount[]> {
-    let address = `${this.url}/assetsDiscount`;
-    return this.http.get<AssetsDiscount[]>(address);
+  postGenerateAssetsDiscount(form: AssetsDiscountGenerator): Observable<any>{
+    let address = `${this.url}/assetsDiscountGenerate`;
+    console.log(address);
+    return this.http.post<any>(address, form);
   }
+
+  getEmployee(id: number):Observable<AssetsDiscountEmployee[]> {
+    let address = `${this.url}/assetsDiscount/${id}`;
+    return this.http.get<AssetsDiscountEmployee[]>(address);
+  }
+
+  getDetails(id: number): Observable<AssetsDiscountDetails[]>{
+    let address = `${this.url}/assetsDiscountDetail/${id}`;
+    return this.http.get<AssetsDiscountDetails[]>(address);
+  }
+
+
 
 }

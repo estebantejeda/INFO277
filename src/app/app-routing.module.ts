@@ -19,6 +19,8 @@ import {ParametrosComponent} from "./components/parametros/parametros.component"
 import {IngresarPersonalComponent} from "./components/ingresar-personal/ingresar-personal.component";
 import {IngresarHaberesDescuentosComponent} from "./components/ingresar-haberes-descuentos/ingresar-haberes-descuentos.component";
 import {ListarPersonalComponent} from "./components/listar-personal/listar-personal.component";
+import {ListarCotizacionPersonalComponent} from "./components/listar-cotizacion-personal/listar-cotizacion-personal.component";
+import {CotizacionesComponent} from "./components/cotizaciones/cotizaciones.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path: 'parameters', component: ParametrosComponent},
   {path: 'newEmployee', component: IngresarPersonalComponent},
   {path: 'assetsDiscounts', component: IngresarHaberesDescuentosComponent},
-  {path: 'employee', component: ListarPersonalComponent}
+  {path: 'employee', component: ListarPersonalComponent},
+  {path: 'employee/assetsDiscount/:id', component: ListarCotizacionPersonalComponent, pathMatch: 'full'},
+  {path: 'assetsDiscount/:id', component: CotizacionesComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
