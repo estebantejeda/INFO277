@@ -9,15 +9,15 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./cotizaciones.component.css']
 })
 export class CotizacionesComponent implements OnInit {
-  assetDiscountDetailList: AssetsDiscountDetails[];
+  assetDiscountDetailList: AssetsDiscountDetails | undefined;
   constructor(private api: AssetsDiscountService, private router: ActivatedRoute) {
-    this.assetDiscountDetailList = [];
+    this.assetDiscountDetailList = undefined;
   }
 
   ngOnInit(): void {
     this.api.getDetails(this.router.snapshot.params.id).subscribe(data => {
       this.assetDiscountDetailList = data;
-      console.log(data);
+      console.log(this.assetDiscountDetailList);
     })
   }
 

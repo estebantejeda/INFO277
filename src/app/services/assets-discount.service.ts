@@ -31,9 +31,9 @@ export class AssetsDiscountService {
     return this.http.get<AssetsDiscountEmployee[]>(address);
   }
 
-  getDetails(id: number): Observable<AssetsDiscountDetails[]>{
+  getDetails(id: number): Observable<AssetsDiscountDetails>{
     let address = `${this.url}/assetsDiscountDetail/${id}`;
-    return this.http.get<AssetsDiscountDetails[]>(address);
+    return this.http.get<AssetsDiscountDetails>(address);
   }
 
 

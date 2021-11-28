@@ -17,8 +17,6 @@ interface AssetsDiscountDetails{
   netSalary: number;
   date: Date;
   employee: Employee;
-  afp: Afp;
-  isapre: Isapre;
 }
 
 interface Employee{
@@ -30,6 +28,8 @@ interface Employee{
   refugees: number;
   baseSalary: number;
   salesCommission: number;
+  afp: Afp;
+  isapre: Isapre;
 }
 
 interface Afp{

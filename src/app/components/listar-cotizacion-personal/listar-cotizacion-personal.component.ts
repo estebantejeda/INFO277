@@ -13,13 +13,13 @@ export class ListarCotizacionPersonalComponent implements OnInit {
   title: string;
   constructor(private api: AssetsDiscountService, private router: ActivatedRoute) {
     this.assetDiscountEmployeeList = [];
-    this.title = 'Cotizaciones no encontradas';
+    this.title = 'Remuneraciones no encontradas';
   }
 
   ngOnInit(): void {
     this.api.getEmployee(this.router.snapshot.params.id).subscribe(data => {
       this.assetDiscountEmployeeList = data
-      this.title = `Cotizaciones de ${data[0].employee.name}`;
+      this.title = `Remuneraciones de ${data[0].employee.name}`;
     });
 
   }

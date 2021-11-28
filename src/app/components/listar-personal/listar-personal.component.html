@@ -25,13 +25,13 @@
       <td>{{employee.gender}}</td>
       <td>{{employee.birthDate | date: 'dd/MM/yyyy'}}</td>
       <td>{{employee.refugees}}</td>
-      <td>$ {{employee.baseSalary}}</td>
+      <td>$ {{employee.baseSalary | number: '1.0-0'}}</td>
       <td>{{employee.salesCommission}} %</td>
       <td>{{employee.afpId}}</td>
       <td>{{employee.isapreId}}</td>
       <td>
         <span class="badge bg-primary">
-          <a routerLink="/employee/assetsDiscount/{{employee.id}}">Ver cotizaciones</a>
+          <a routerLink="/employee/assetsDiscount/{{employee.id}}">Ver Remuneraciones</a>
         </span>
       </td>
     </tr>

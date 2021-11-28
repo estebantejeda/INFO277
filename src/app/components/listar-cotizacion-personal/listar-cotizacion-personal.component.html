@@ -14,7 +14,7 @@
     <tr *ngFor="let assetDiscountEmployee of assetDiscountEmployeeList">
       <th scope="row">{{assetDiscountEmployee.id}}</th>
       <td>{{assetDiscountEmployee.date | date: 'MM/yyyy'}}</td>
-      <td>$ {{assetDiscountEmployee.netSalary}}</td>
+      <td>$ {{assetDiscountEmployee.netSalary | number: '1.0-0'}}</td>
       <td>
         <span class="badge bg-primary">
           <a routerLink="/assetsDiscount/{{assetDiscountEmployee.id}}">Ver Detalle</a>
