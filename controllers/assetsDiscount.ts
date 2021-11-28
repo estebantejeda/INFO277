@@ -90,7 +90,7 @@ export const postGenerateAssetsDiscount = async (req: Request, res: Response) =>
     const totalAssets = taxable + refugeesAmount;
     const pension = taxable*0.1;
     const health = taxable*0.07;
-    const socialSecurity = taxable * afp.getDataValue('tax');
+    const socialSecurity = taxable * afp.getDataValue('tax')/100;
     const totalForecast = pension+health+socialSecurity;
     const totalDiscount = totalForecast+assetsDiscount.getDataValue('familyWelfare')+assetsDiscount.getDataValue('otherDiscount');
     const netSalary = totalAssets-totalDiscount;
@@ -125,8 +125,8 @@ export const getAssetsDiscount = async (req: Request, res: Response) => {
     });
     if(Object.entries(assetsDiscount).length === 0) return res.json({
         ok: false,
-        error: "Assets-Discount not found"}
-    );
+        error: "Assets-Discount not found"
+    });
     return res.json(assetsDiscount);
 }
 
@@ -158,4 +158,3 @@ export const getAssetsDiscountDetail = async (req: Request, res: Response) => {
     });
     return res.json(assetsDiscount);
 }
-

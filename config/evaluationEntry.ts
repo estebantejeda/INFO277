@@ -10,7 +10,6 @@ import Afp from "../models/Afp";
 import Isapre from "../models/Isapre";
 import Parameters from "../models/Parameters";
 import Employee from "../models/Employee";
-import AssetsDiscount from "../models/AssetsDiscount";
 
 const init = async () => {
     await createProducts();
@@ -24,7 +23,6 @@ const init = async () => {
     await createIsapre();
     await createParameters();
     await createEmployee();
-    await createAssetsDiscount();
     return new Promise((resolve) => {
         resolve("BD cargada con éxito");
     });
@@ -371,47 +369,6 @@ const createEmployee = async () => {
         salesCommission: 5,
         afpId: 3,
         isapreId: 2
-    });
-}
-
-const createAssetsDiscount = async () => {
-    await AssetsDiscount.create({
-        workedDays: 20,
-        gratification: 100000,
-        familyWelfare: 2000,
-        otherDiscount: 50000,
-        employeeId: 1,
-        date: "2021-11",
-        baseSalary: 150000,
-        commission: 0,
-        taxable: 150000+100000+0,
-        refugeesAmount: 1*13823,
-        totalAssets: (150000+100000+0)+(1*13823),
-        pension: (150000+100000+0)*0.1,
-        health: (150000+100000+0)*0.07,
-        socialSecurity: (150000+100000+0)*7,
-        totalForecast: ((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7),
-        totalDiscount: ((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7)+2000+50000,
-        netSalary: ((150000+100000+0)+(1*13823))-(((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7)+2000+50000)
-    });
-    await AssetsDiscount.create({
-        workedDays: 20,
-        gratification: 100000,
-        familyWelfare: 2000,
-        otherDiscount: 50000,
-        employeeId: 1,
-        date: "2021-10",
-        baseSalary: 150000,
-        commission: 0,
-        taxable: 150000+100000+0,
-        refugeesAmount: 1*13823,
-        totalAssets: (150000+100000+0)+(1*13823),
-        pension: (150000+100000+0)*0.1,
-        health: (150000+100000+0)*0.07,
-        socialSecurity: (150000+100000+0)*7,
-        totalForecast: ((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7),
-        totalDiscount: ((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7)+2000+50000,
-        netSalary: ((150000+100000+0)+(1*13823))-(((150000+100000+0)*0.1)+((150000+100000+0)*0.07)+((150000+100000+0)*7)+2000+50000)
     });
 }
 
