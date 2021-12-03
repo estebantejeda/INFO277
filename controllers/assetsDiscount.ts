@@ -158,3 +158,34 @@ export const getAssetsDiscountDetail = async (req: Request, res: Response) => {
     });
     return res.json(assetsDiscount);
 }
+
+export const getAllAssetsDiscountDetail = async (req: Request, res: Response) => {
+    const dateAssetDiscount = req.params.date;
+    const assetsDiscount = await AssetsDiscount.findAll({
+        attributes: {
+            exclude: ['createdAt', 'updatedAt', 'employeeId']
+        },
+        where: {date: new Date(dateAssetDiscount)},
+        include: [{
+            model: Employee,
+            attributes: {
+                exclude: ['createdAt', 'updatedAt', 'afpId', 'isapreId']
+            },
+            include: [
+                {
+                    model: Afp,
+                    attributes: {exclude: ['createdAt', 'updatedAt']}
+                },
+                {
+                    model: Isapre,
+                    attributes: {exclude: ['createdAt', 'updatedAt']}
+                }
+            ]
+        }]
+    });
+    if (assetsDiscount == null) return res.json({
+        ok: false,
+        msge: "Assets-Discount not found in date"
+    });
+    return res.json(assetsDiscount);
+}
