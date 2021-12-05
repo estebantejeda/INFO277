@@ -21,6 +21,7 @@ import {IngresarHaberesDescuentosComponent} from "./components/ingresar-haberes-
 import {ListarPersonalComponent} from "./components/listar-personal/listar-personal.component";
 import {ListarCotizacionPersonalComponent} from "./components/listar-cotizacion-personal/listar-cotizacion-personal.component";
 import {CotizacionesComponent} from "./components/cotizaciones/cotizaciones.component";
+import {AfiliadosAfpComponent} from "./components/afp/afiliados-afp/afiliados-afp.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path: 'assetsDiscounts', component: IngresarHaberesDescuentosComponent},
   {path: 'employee', component: ListarPersonalComponent},
   {path: 'employee/assetsDiscount/:id', component: ListarCotizacionPersonalComponent, pathMatch: 'full'},
-  {path: 'assetsDiscount/:id', component: CotizacionesComponent, pathMatch: 'full'}
+  {path: 'assetsDiscount/:id', component: CotizacionesComponent, pathMatch: 'full'},
+  {path: 'employeeAfp/:id', component: AfiliadosAfpComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

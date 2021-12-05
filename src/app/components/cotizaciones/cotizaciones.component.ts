@@ -17,8 +17,7 @@ export class CotizacionesComponent implements OnInit {
   ngOnInit(): void {
     this.api.getDetails(this.router.snapshot.params.id).subscribe(data => {
       this.assetDiscountDetailList = data;
-      console.log(this.assetDiscountDetailList);
-    })
+    });
   }
 
 }

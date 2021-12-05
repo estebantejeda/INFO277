@@ -38,6 +38,7 @@ import { ListarPersonalComponent } from './components/listar-personal/listar-per
 import { GenerarHaberesDescuentosComponent } from './components/ingresar-haberes-descuentos/generar-haberes-descuentos/generar-haberes-descuentos.component';
 import { ListarCotizacionPersonalComponent } from './components/listar-cotizacion-personal/listar-cotizacion-personal.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+import { AfiliadosAfpComponent } from './components/afp/afiliados-afp/afiliados-afp.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
     GenerarHaberesDescuentosComponent,
     ListarCotizacionPersonalComponent,
     CotizacionesComponent,
+    AfiliadosAfpComponent,
   ],
   imports: [
     BrowserModule,

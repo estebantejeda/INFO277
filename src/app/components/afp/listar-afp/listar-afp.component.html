@@ -10,8 +10,13 @@
     <tbody>
     <tr *ngFor="let afp of afpList">
       <th scope="row">{{afp.id}}</th>
-      <th scope="row">{{afp.name}}</th>
-      <th scope="row">{{afp.tax}} %</th>
+      <td>{{afp.name}}</td>
+      <td>{{afp.tax}} %</td>
+      <td>
+        <span class="badge bg-primary">
+          <a routerLink="/employeeAfp/{{afp.id}}">Ver afiliados</a>
+        </span>
+      </td>
     </tr>
     </tbody>
   </table>
