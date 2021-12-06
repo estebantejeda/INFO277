@@ -42,6 +42,10 @@ export class AssetsDiscountService {
     return this.http.get<AssetsDiscountDate[]>(address);
   }
 
+  getSalaryLedger(date: string): Observable<AssetsDiscountDetails[]>{
+    let address = `${this.url}/assetsAllDiscountDetail/${date}`;
+    return this.http.get<AssetsDiscountDetails[]>(address);
+  }
 
 
 }

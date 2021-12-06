@@ -24,6 +24,7 @@ import {CotizacionesComponent} from "./components/cotizaciones/cotizaciones.comp
 import {AfiliadosAfpComponent} from "./components/afp/afiliados-afp/afiliados-afp.component";
 import {GenerarHaberesDescuentosComponent} from "./components/ingresar-haberes-descuentos/generar-haberes-descuentos/generar-haberes-descuentos.component";
 import {LibroRemuneracionesComponent} from "./components/libro-remuneraciones/libro-remuneraciones.component";
+import {ListarLibroRemuneracionesComponent} from "./components/libro-remuneraciones/listar-libro-remuneraciones/listar-libro-remuneraciones.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/newArticle', pathMatch: 'full'},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: 'employee', component: ListarPersonalComponent},
   {path: 'generateAssetsDiscount', component: GenerarHaberesDescuentosComponent},
   {path: 'salaryBook', component: LibroRemuneracionesComponent},
+  {path: 'salaryLedger/:date', component: ListarLibroRemuneracionesComponent, pathMatch: 'full'},
   {path: 'employee/assetsDiscount/:id', component: ListarCotizacionPersonalComponent, pathMatch: 'full'},
   {path: 'assetsDiscount/:id', component: CotizacionesComponent, pathMatch: 'full'},
   {path: 'employeeAfp/:id', component: AfiliadosAfpComponent, pathMatch: 'full'}
