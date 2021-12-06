@@ -370,6 +370,17 @@ const createEmployee = async () => {
         afpId: 3,
         isapreId: 2
     });
+    await Employee.create({
+        rut: "3579281-0",
+        name: "Marge Simpson",
+        gender: 2,
+        birthDate: new Date(),
+        refugees: 4,
+        baseSalary: 180000,
+        salesCommission: 20,
+        afpId: 1,
+        isapreId: 1
+    });
 }
 
 const randomTax = (): number => {

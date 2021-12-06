@@ -8,5 +8,6 @@ router.post('/assetsDiscountGenerate', assetsDiscount.postGenerateAssetsDiscount
 router.get('/assetsDiscount/:employeeId', assetsDiscount.getAssetsDiscount);
 router.get('/assetsDiscountDetail/:id', assetsDiscount.getAssetsDiscountDetail);
 router.get('/assetsAllDiscountDetail/:date', assetsDiscount.getAllAssetsDiscountDetail);
+router.get('/assetsDiscountDate', assetsDiscount.getDateAssetsDiscount);
 
 export default router;

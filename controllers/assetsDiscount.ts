@@ -130,6 +130,17 @@ export const getAssetsDiscount = async (req: Request, res: Response) => {
     return res.json(assetsDiscount);
 }
 
+export const getDateAssetsDiscount = async (_req: Request, res: Response) => {
+    const assetsDiscount = await AssetsDiscount.findAll({
+        attributes: ['date'],
+        where: {
+            baseSalary: {[Op.ne]: null}
+        },
+        group: 'date'
+    });
+    return res.json(assetsDiscount);
+}
+
 export const getAssetsDiscountDetail = async (req: Request, res: Response) => {
     const assetsDiscount = await AssetsDiscount.findByPk(req.params.id, {
         attributes: {
