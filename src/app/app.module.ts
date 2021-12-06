@@ -39,6 +39,7 @@ import { GenerarHaberesDescuentosComponent } from './components/ingresar-haberes
 import { ListarCotizacionPersonalComponent } from './components/listar-cotizacion-personal/listar-cotizacion-personal.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 import { AfiliadosAfpComponent } from './components/afp/afiliados-afp/afiliados-afp.component';
+import { LibroRemuneracionesComponent } from './components/libro-remuneraciones/libro-remuneraciones.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { AfiliadosAfpComponent } from './components/afp/afiliados-afp/afiliados-
     ListarCotizacionPersonalComponent,
     CotizacionesComponent,
     AfiliadosAfpComponent,
+    LibroRemuneracionesComponent,
   ],
   imports: [
     BrowserModule,

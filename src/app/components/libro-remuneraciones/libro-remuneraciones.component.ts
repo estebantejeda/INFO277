@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import AssetsDiscountDate from "../../models/Interfaces/AssetsDiscountDate";
 import {AssetsDiscountService} from "../../services/assets-discount.service";
 
 @Component({
@@ -8,20 +8,21 @@ import {AssetsDiscountService} from "../../services/assets-discount.service";
   styleUrls: ['./libro-remuneraciones.component.css']
 })
 export class LibroRemuneracionesComponent implements OnInit {
-  assetsDiscoutBookForm: FormGroup;
-  constructor(private fb: FormBuilder, private api: AssetsDiscountService ) {
-    this.assetsDiscoutBookForm = this.fb.group({
-      date: ['', Validators.required]
-    });
+  assetsDiscountDateList: AssetsDiscountDate[];
+  constructor(private api: AssetsDiscountService ) {
+    this.assetsDiscountDateList = [];
   }
+
   ngOnInit(): void {
-
+    this.api.getDate().subscribe(data => this.assetsDiscountDateList = data);
   }
 
-  newAssetsDiscountBook(){
-    this.api.getAssetsDiscountBook(this.assetsDiscoutBookForm.value.date).subscribe(data => {
-      console.log(data);
-    });
+  transformDate(date: Date): string{
+    const newDate = date.toString();
+    const newDateSplit = newDate.split('-');
+    const year = newDateSplit[0];
+    const month = newDateSplit[1];
+    return `${year}-${month}`;
   }
 
 }

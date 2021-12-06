@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import AssetsDiscountGenerator from "../models/Interfaces/AssetsDiscountGenerator";
 import AssetsDiscountEmployee from "../models/Interfaces/AssetsDiscountEmployee";
 import AssetsDiscountDetails from "../models/Interfaces/AssetsDiscountDetails";
+import AssetsDiscountDate from "../models/Interfaces/AssetsDiscountDate";
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,11 @@ export class AssetsDiscountService {
   getDetails(id: number): Observable<AssetsDiscountDetails>{
     let address = `${this.url}/assetsDiscountDetail/${id}`;
     return this.http.get<AssetsDiscountDetails>(address);
+  }
+
+  getDate(): Observable<AssetsDiscountDate[]>{
+    let address = `${this.url}/assetsDiscountDate`;
+    return this.http.get<AssetsDiscountDate[]>(address);
   }
 
 
