@@ -58,5 +58,21 @@
 
     </tr>
     </tbody>
+    <tfoot>
+      <th colspan="4" class="text-center">TOTALES</th>
+      <td>$ {{getBaseSalary() | number: '1.0-0'}}</td>
+      <td class="text-center">-</td>
+      <td>$ {{getGratification() | number: '1.0-0'}}</td>
+      <td>$ {{0 | number: '1.0-0'}}</td>
+      <td>$ {{getRefugeesAmount() | number: '1.0-0'}}</td>
+      <td>$ {{getTotalAssets() | number: '1.0-0'}}</td>
+      <td>$ {{getPension() | number: '1.0-0'}}</td>
+      <td>$ {{getHealth() | number: '1.0-0'}}</td>
+      <td>$ {{getSocialSecurity() | number: '1.0-0'}}</td>
+      <td>$ {{getFamilyWelfare() | number: '1.0-0'}}</td>
+      <td>$ {{getOtherDiscount() | number: '1.0-0'}}</td>
+      <td>$ {{getTotalDiscount() | number: '1.0-0'}}</td>
+      <td>$ {{getNetSalary() | number: '1.0-0'}}</td>
+    </tfoot>
   </table>
 </div>
