@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tasa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let afp of afpList">
+      <th scope="row">{{afp.id}}</th>
+      <td>{{afp.name}}</td>
+      <td>{{afp.tax}} %</td>
+      <td>
+        <span class="badge bg-primary">
+          <a routerLink="/employeeAfp/{{afp.id}}">Ver afiliados</a>
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

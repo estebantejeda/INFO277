@@ -1,0 +1,35 @@
+<h1 class="mt-4">Ingresar Producto</h1>
+
+<div class="container mt-4">
+  <div *ngIf="successAlert" class="alert alert-success" role="alert">Producto añadido con éxito!</div>
+  <form [formGroup]="productForm" (ngSubmit)="newProduct()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputId" class="form-label">ID</label>
+      <input type="number" formControlName="id" class="form-control" id="inputId">
+    </div>
+    <div class="col-md-6">
+      <label for="inputDate" class="form-label">Fecha</label>
+      <input type="date" formControlName="date" class="form-control" id="inputDate">
+    </div>
+    <div class="col-md-12">
+      <label for="inputDescription" class="form-label">Descripción</label>
+      <input type="text" formControlName="description" class="form-control" id="inputDescription">
+    </div>
+    <div class="col-md-4">
+      <label for="inputCost" class="form-label">Costo</label>
+      <input type="number" formControlName="cost" class="form-control" id="inputCost" min="1">
+    </div>
+    <div class="col-md-4">
+      <label for="inputPrice" class="form-label">Precio</label>
+      <input type="number" formControlName="price" class="form-control" id="inputPrice" min="1">
+    </div>
+    <div class="col-md-4">
+      <label for="inputStock" class="form-label">Stock</label>
+      <input type="number" formControlName="stock" class="form-control" id="inputStock" min="1">
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="productForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+
+</div>

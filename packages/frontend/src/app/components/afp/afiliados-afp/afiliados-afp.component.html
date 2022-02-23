@@ -1,0 +1,38 @@
+<h1 class="mt-4">Lista de Afiliados</h1>
+
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <tbody>
+    <tr>
+      <th scope="row">ID: {{afpEmployeeList[0].id}}</th>
+      <th scope="row">Nombre: {{afpEmployeeList[0].name}}</th>
+      <th scope="row">Tasa: {{afpEmployeeList[0].tax}} %</th>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">RUT</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sueldo Base</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let afpEmployee of afpEmployeeList">
+      <th scope="col">{{afpEmployee.employee.id}}</th>
+      <td>{{afpEmployee.employee.rut}}</td>
+      <td>{{afpEmployee.employee.name}}</td>
+      <td>{{afpEmployee.employee.baseSalary}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

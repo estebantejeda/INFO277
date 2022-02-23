@@ -1,0 +1,19 @@
+<h1 class="mt-4">Isapre</h1>
+
+<div class="container mt-4">
+  <form [formGroup]="isapreForm" (ngSubmit)="newIsapre()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nombre</label>
+      <input type="text" formControlName="name" class="form-control" id="inputName">
+    </div>
+    <div class="d-grip gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="isapreForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+</div>
+
+<hr>
+
+<div class="container mt-4">
+  <app-listar-isapre></app-listar-isapre>
+</div>

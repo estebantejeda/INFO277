@@ -1,0 +1,55 @@
+<h1 class="mt-4">Ingresar Compras</h1>
+
+<div class="container mt-4">
+
+  <div *ngIf="successAlert" class="alert alert-success" role="alert">Producto añadido con éxito!</div>
+  <div *ngIf="dangerAlert" class="alert alert-danger" role="alert">Id de artículo duplicado</div>
+
+
+  <form [formGroup]="purchaseForm" (ngSubmit)="newPurchase()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputDocNum" class="form-label">Número de Documento</label>
+      <input type="number" formControlName="docNumber" class="form-control" id="inputDocNum">
+    </div>
+    <div class="col-md-6">
+      <label for="inputDate" class="form-label">Fecha</label>
+      <input type="date" formControlName="date" class="form-control" id="inputDate">
+    </div>
+    <div class="col-md-6">
+      <label for="inputRut" class="form-label">Rut Proveedor</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Nombre Proveedor</label>
+      <input class="form-control" id="inputName" type="text" [placeholder]="namePlaceHolder" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="inputId" class="form-label">ID Producto</label>
+      <input type="text" formControlName="id" class="form-control" id="inputId" >
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Descripción</label>
+      <input class="form-control" id="inputDescription" type="text" [placeholder]="descriptionPlaceHolder" disabled>
+    </div>
+    <div class="col-md-4">
+      <label for="inputStock" class="form-label">Cantidad</label>
+      <input type="number" formControlName="stock" class="form-control" id="inputStock" min="1">
+    </div>
+    <div class="col-md-4">
+      <label for="inputPrice" class="form-label">Costo</label>
+      <input type="number" formControlName="price" class="form-control" id="inputPrice" min="1">
+    </div>
+    <div class="col-md-4">
+      <label for="inputTotal" class="form-label">Total</label>
+      <input type="number" formControlName="total" class="form-control" id="inputTotal" min="1">
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="purchaseForm.invalid" type="submit">Agregar</button>
+    </div>
+  </form>
+
+</div>
+
+<div class="container mt-4">
+  <app-grilla-articulos [purchaseList]="purchaseList"></app-grilla-articulos>
+</div>

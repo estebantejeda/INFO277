@@ -1,0 +1,35 @@
+<h1 class="mt-4">Parámetros</h1>
+
+<div class="container mt-4">
+  <form [formGroup]="parametersForm" (ngSubmit)="newParameter()" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputUf" class="form-label">UF</label>
+      <input type="number" formControlName="uf" class="form-control" id="inputUf">
+    </div>
+    <div class="col-md-6">
+      <label for="inputUtm" class="form-label">UTM</label>
+      <input type="number" formControlName="utm" class="form-control" id="inputUtm">
+    </div>
+    <div class="col-md-4">
+      <label for="inputRefugeesAmount" class="form-label">Valor cargas</label>
+      <input type="number" formControlName="refugeesAmount" class="form-control" id="inputRefugeesAmount">
+    </div>
+    <div class="col-md-4">
+      <label for="inputDaysPerMonth" class="form-label">Días del mes</label>
+      <input type="number" formControlName="daysPerMonth" class="form-control" id="inputDaysPerMonth">
+    </div>
+    <div class="col-md-4">
+      <label for="inputIncomeTax" class="form-label">Impuesto a la renta</label>
+      <input type="number" formControlName="incomeTax" class="form-control" id="inputIncomeTax">
+    </div>
+    <div class="d-grip gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="parametersForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+</div>
+
+<hr>
+
+<div class="container mt-4">
+  <app-listar-parametros></app-listar-parametros>
+</div>

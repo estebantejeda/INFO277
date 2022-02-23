@@ -1,0 +1,58 @@
+<h1 class="mt-4">Ingresar Personal</h1>
+
+<div class="container mt-4">
+  <form [formGroup]="employeeForm" (ngSubmit)="newEmployee()" class="row g-3">
+    <div class="col-md-3">
+      <label for="inputRut" class="form-label">RUT</label>
+      <input type="text" formControlName="rut" class="form-control" id="inputRut">
+    </div>
+    <div class="col-md-9">
+      <label for="inputName" class="form-label">Nombre</label>
+      <input type="text" formControlName="name" class="form-control" id="inputName">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Género</label>
+      <select class="form-select" formControlName="gender" id="inputPayType">
+        <option value=1>Hombre</option>
+        <option value=2>Mujer</option>
+        <option value=3>Otro</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputBirthDate" class="form-label">Fecha de nacimiento</label>
+      <input type="date" formControlName="birthDate" class="form-control" id="inputBirthDate">
+    </div>
+    <div class="col-md-2">
+      <label for="inputRefugees" class="form-label">Cargas</label>
+      <input type="number" formControlName="refugees" class="form-control" id="inputRefugees">
+    </div>
+    <div class="col-md-3">
+      <label for="inputBaseSalary" class="form-label">Sueldo Base</label>
+      <input type="number" formControlName="baseSalary" class="form-control" id="inputBaseSalary">
+    </div>
+    <div class="col-md-3">
+      <label for="inputSalesCommission" class="form-label">Comisión por Ventas</label>
+      <input type="number" formControlName="salesCommission" class="form-control" id="inputSalesCommission">
+    </div>
+    <div class="col-md-2">
+      <label for="inputAfpId" class="form-label">ID AFP</label>
+      <input type="number" formControlName="afpId" class="form-control" id="inputAfpId">
+    </div>
+    <div class="col-md-10">
+      <label class="form-label">Nombre AFP</label>
+      <input type="number" class="form-control" id="inputNameAfp" disabled>
+    </div>
+    <div class="col-md-2">
+      <label for="inputIsapreId" class="form-label">ID Isapre</label>
+      <input type="text" formControlName="isapreId" class="form-control" id="inputIsapreId">
+    </div>
+    <div class="col-md-10">
+      <label class="form-label">Nombre Isapre</label>
+      <input type="text" class="form-control" id="inputNameIsapre" disabled>
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-success btn-lg" [disabled]="employeeForm.invalid" type="submit">Aceptar</button>
+    </div>
+  </form>
+
+</div>

@@ -1,4 +1,4 @@
-.# Logs
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -102,10 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
-<<<<<<< HEAD
-=======
 
 # IDE
 
 .idea/
->>>>>>> backend/main
