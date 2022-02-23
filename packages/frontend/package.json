@@ -27,7 +27,6 @@
   "bugs": {
     "url": "https://github.com/estebantejeda/INFO277/issues"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.13",
